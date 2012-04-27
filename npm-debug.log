@@ -1,0 +1,43 @@
+info it worked if it ends with ok
+verbose cli [ '/usr/local/bin/node',
+verbose cli   '/usr/local/bin/npm',
+verbose cli   'install',
+verbose cli   'express' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose config file /Users/a239597/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose cache add [ 'express', null ]
+silly cache add: name, spec, args [ undefined, 'express', [ 'express', null ] ]
+verbose parsed url { pathname: 'express', path: 'express', href: 'express' }
+verbose addNamed [ 'express', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'express', '', false ]
+verbose raw, before any munging express
+verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+verbose url resolved https://registry.npmjs.org/express
+http GET https://registry.npmjs.org/express
+ERR! Error: failed to fetch from registry: express
+ERR!     at /usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/get.js:139:12
+ERR!     at cb (/usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/request.js:31:9)
+ERR!     at Request._callback (/usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/request.js:136:18)
+ERR!     at Request.callback (/usr/local/lib/node_modules/npm/node_modules/request/main.js:119:22)
+ERR!     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/main.js:212:58)
+ERR!     at Request.emit (events.js:88:20)
+ERR!     at ClientRequest.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/main.js:209:10)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at CleartextStream.<anonymous> (http.js:1137:11)
+ERR!     at CleartextStream.emit (events.js:67:17)
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Darwin 11.3.0
+ERR! command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "express"
+ERR! cwd /Users/a239597/src/git/cqrs-js
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! message failed to fetch from registry: express
+verbose exit [ 1, true ]
