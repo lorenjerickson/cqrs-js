@@ -11,5 +11,8 @@ var Class = require('../util/class');
 var EventPublisher = Class.extend({
     init: function() {
 
+    },
+    publish: function(event) {
+        // TODO
     }
 });

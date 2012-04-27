@@ -7,14 +7,14 @@
  */
 
 var Class = require('../util/class'),
-    EventStore = require('../event/EventStore');
+    EventStore = require('./EventStore');
 
 var BaseRepository = Class.extend({
     init: function() {
         this.eventStore = new EventStore();
     },
     getById: function(id) {
-
+        // NOTE should be overridden by derived repos so that the correct domain object gets created
     },
     save: function(aggregate, expectedVersion) {
         this.eventStore.saveEvents(aggregate.id, aggregate.events, expectedVersion);

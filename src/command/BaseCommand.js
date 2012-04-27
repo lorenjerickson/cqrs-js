@@ -9,7 +9,7 @@
 var Class = require('../util/class');
 
 var BaseCommand = Class.extend({
-    init: function() {
-
+    init: function(commandName) {
+        this.commandName = commandName;
     }
 });

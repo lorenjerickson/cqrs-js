@@ -10,6 +10,7 @@ var BaseCommand = require('./BaseCommand.js');
 
 var ChangeCommentsCommand = BaseCommand.extend({
     init: function(id, comments) {
+        this._super('ChangeComments');
         this.id = id;
         this.comments = comments;
     }

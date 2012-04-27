@@ -10,6 +10,7 @@ var BaseCommand = require('./BaseCommand.js');
 
 var ChangeCompletedCommand = BaseCommand.extend({
     init: function(id, completed) {
+        this._super('ChangeCompleted');
         this.id = id;
         this.completed = completed;
     }

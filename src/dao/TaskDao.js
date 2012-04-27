@@ -8,7 +8,7 @@
 
 var BaseDao = require('./BaseDao');
 
-var ModelDao = BaseDao.extend({
+var TaskDao = BaseDao.extend({
     init: function() {
         this._super('tasks', 'events');
     }

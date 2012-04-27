@@ -10,6 +10,7 @@ var BaseCommand = require('./BaseCommand.js');
 
 var ChangeDueDateCommand = BaseCommand.extend({
     init: function(id, dueDate) {
+        this._super('ChangeDueDate');
         this.id = id;
         this.dueDate = dueDate;
     }

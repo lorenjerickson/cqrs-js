@@ -6,15 +6,15 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Class = require('../util/class'),
-    EventPublisher = require('./EventPublisher'),
-    EventDao = require('../dao/EventDao'),
-    EventDescriptor = require('./EventDescriptor'),
+var Class = require('../util/class.js'),
+    EventPublisher = require('./EventPublisher.js'),
+    TaskDao = require('../dao/TaskDao.js'),
+    EventDescriptor = require('./EventDescriptor.js'),
     _ = require('../../node_modules/underscore');
 
 var EventStore = Class.extend({
     init: function() {
-        this.dao = new EventDao();
+        this.dao = new TaskDao();
         this.publisher = new EventPublisher();
     },
     getEventsForAggregateId: function(id) {
