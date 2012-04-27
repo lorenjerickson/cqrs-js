@@ -11,11 +11,14 @@ var AggregateRoot = require('./AggregateRoot.js'),
 
 var Task = AggregateRoot.extend({
     init: function(name, comments, dueDate) {
-        this.id = guid.generate();
-        this.name = name;
-        this.comments = comments;
-        this.dueDate = dueDate;
-        this.complete = false;
+        var changes = [
+            {field:'id', value:guid.generate()},
+            {field:'name', value:name},
+            {field:'comments', value:comments},
+            {field:'dueDate', value:dueDate},
+            {field:'completed', value:false}
+        ];
+        this._super.applyChanges(changes);
     },
     changeName: function(newName) {
         this._super.applyChange({field:'name', value:newName});

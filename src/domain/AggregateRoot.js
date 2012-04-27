@@ -26,6 +26,11 @@ var AggregateRoot = Class.extend({
             this.changes.push(event);
         }
     },
+    applyChanges: function(changes) {
+        _.each(changes, function(change) {
+            this.applyChangeInternal(change, true);
+        });
+    },
     commitChanges: function() {
         _changes = [];
     },
