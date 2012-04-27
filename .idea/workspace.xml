@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce5e773-7460-44b0-a86c-9ba07cbc0123" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/BaseDao.js" afterPath="$PROJECT_DIR$/src/dao/BaseDao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/repository/BaseRepository.js" afterPath="$PROJECT_DIR$/src/repository/BaseRepository.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/AggregateRoot.js" afterPath="$PROJECT_DIR$/src/domain/AggregateRoot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/Task.js" afterPath="$PROJECT_DIR$/src/domain/Task.js" />
     </list>
     <ignored path="cqrs-js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +24,44 @@
     <favorites_list name="cqrs-js" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Task.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/Task.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="65" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AggregateRoot.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/domain/AggregateRoot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="68" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.7150776">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateCommand.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/command/CreateCommand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="35" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskCreatedEvent.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/event/TaskCreatedEvent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="27" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -38,8 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/command/BaseCommand.js" />
-        <option value="$PROJECT_DIR$/src/handler/TaskCommandHandler.js" />
         <option value="$PROJECT_DIR$/src/bus/CommandEventBus.js" />
         <option value="$PROJECT_DIR$/src/eventstore/EventPublisher.js" />
         <option value="$PROJECT_DIR$/src/repository/BaseRepository.js" />
@@ -54,6 +88,8 @@
         <option value="$PROJECT_DIR$/src/event/CompletedChangedEvent.js" />
         <option value="$PROJECT_DIR$/src/event/CommentsChangedEvent.js" />
         <option value="$PROJECT_DIR$/src/dao/BaseDao.js" />
+        <option value="$PROJECT_DIR$/src/domain/AggregateRoot.js" />
+        <option value="$PROJECT_DIR$/src/domain/Task.js" />
       </list>
     </option>
   </component>
@@ -202,24 +238,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cqrs-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cqrs-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="event" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -238,7 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
+              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,14 +340,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1050" width="1120" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22424795" sideWeight="0.6706136" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22424795" sideWeight="0.6706136" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -400,33 +418,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/command/BaseCommand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="317" selection-end="317" vertical-scroll-proportion="0.14966741">
-          <folding>
-            <element signature="e#0#159#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/ChangeDueDateCommand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="325" selection-end="325" vertical-scroll-proportion="0.09977827">
-          <folding>
-            <element signature="e#0#159#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repository/TaskRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#159#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dto/TaskDetailDto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="45" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
@@ -460,13 +451,6 @@
           <folding>
             <element signature="e#0#159#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/event/TaskCreatedEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="48" selection-start="0" selection-end="491" vertical-scroll-proportion="0.32386363">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,6 +512,34 @@
     <entry file="file://$PROJECT_DIR$/src/repository/BaseRepository.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="45" selection-start="248" selection-end="248" vertical-scroll-proportion="0.14966741">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/CreateCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="35" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/event/TaskCreatedEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="65" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/AggregateRoot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="68" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.7150776">
           <folding />
         </state>
       </provider>

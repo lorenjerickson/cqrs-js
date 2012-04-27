@@ -21,7 +21,17 @@ var AggregateRoot = Class.extend({
         this.applyChangeInternal(event, true);
     },
     applyChangeInternal: function(event, isNew) {
-        this[event.field] = event.value;
+        // for each key on the event
+        _.each(_.keys(event), function(key) {
+            // don't pass along functions for the ride
+            if (typeof(event[key]) !== 'function') {
+                // only set id if it has not already been set
+                if ((!this.id && key == 'id') || key != 'id') {
+                    this[key] = event[key];
+                }
+            }
+        });
+
         if (isNew) {
             this.changes.push(event);
         }

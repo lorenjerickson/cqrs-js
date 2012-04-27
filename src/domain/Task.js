@@ -7,29 +7,39 @@
  */
 
 var AggregateRoot = require('./AggregateRoot.js'),
-    guid = require('../util/guid.js');
+    guid = require('../util/guid.js'),
+    NameChangedEvent = require('../event/NameChangedEvent.js'),
+    DueDateChangedEvent = require('../event/DueDateChangedEvent.js'),
+    CompletedChangedEvent = require('../event/CompletedChangedEvent.js'),
+    CommentsChangedEvent = require('../event/CommentsChangedEvent.js');
 
 var Task = AggregateRoot.extend({
     init: function(name, comments, dueDate) {
+        // id has to be established first
         var changes = [
-            {field:'id', value:guid.generate()},
-            {field:'name', value:name},
-            {field:'comments', value:comments},
-            {field:'dueDate', value:dueDate},
-            {field:'completed', value:false}
+            new TaskCreatedEvent(guid.generate())
+        ];
+        this._super.applyChanges(changes);
+
+        changes = [
+            new NameChangedEvent(this.id, name),
+            new CommentsChangedEvent(this.id, comments),
+            new DueDateChangedEvent(this.id, dueDate),
+            new CompletedChangedEvent(this.id, false)
         ];
         this._super.applyChanges(changes);
     },
-    changeName: function(newName) {
-        this._super.applyChange({field:'name', value:newName});
+    changeName: function(name) {
+        // TODO validate this.id
+        this._super.applyChange(new NameChangedEvent(this.id, name));
     },
-    changeDescription: function(newDescription) {
-        this._super.applyChange({field:'description', value:newDescription});
+    changeComments: function(comments) {
+        this._super.applyChange(new CommentsChangedEvent(this.id, comments));
     },
-    changeDueDate: function(newDueDate) {
-        this._super.applyChange({field:'dueDate', value:newDueDate});
+    changeDueDate: function(dueDate) {
+        this._super.applyChange(new DueDateChangedEvent(this.id, dueDate));
     },
-    changeComplete: function(state) {
-        this._super.applyChange({field:'complete', value:state});
+    changeComplete: function(completed) {
+        this._super.applyChange(new CompletedChangedEvent(this.id, completed));
     }
 });
