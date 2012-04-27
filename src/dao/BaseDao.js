@@ -69,4 +69,3 @@ var BaseDao = Class.extend({
         }
     }
 });
-

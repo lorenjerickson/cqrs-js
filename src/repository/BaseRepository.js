@@ -6,8 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Class = require('../util/class'),
-    EventStore = require('./EventStore');
+var Class = require('../util/class.js'),
+    EventStore = require('../eventstore/EventStore.js');
 
 var BaseRepository = Class.extend({
     init: function() {
